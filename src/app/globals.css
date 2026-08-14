@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+:root {
+  /* ===== Core backgrounds ===== */
+  --background: #f9f9fa;
+  --foreground: #303036;
+  --card: #ffffff;
+  --card-hover: #f4f4f8;
+
+  /* ===== Brand colors (freegeoguessr-clone.pages.dev style) ===== */
+  --primary: #4045ed;
+  --primary-hover: #3636d0;
+  --primary-foreground: #ffffff;
+
+  /* ===== Text hierarchy ===== */
+  --text-primary: #1a1a2e;
+  --text-secondary: #52525b;
+  --text-muted: #71717a;
+
+  /* ===== Border & ring ===== */
+  --border: #e4e4e7;
+  --ring: #4045ed;
+
+  /* ===== Accent colors ===== */
+  --accent-teal: #15c8d1;
+  --accent-warm: #f59e0b;
+
+  /* ===== Game tag badges ===== */
+  --badge-new: #ecfdf5;
+  --badge-new-text: #065f46;
+  --badge-hot: #fef2f2;
+  --badge-hot-text: #991b1b;
+  --badge-trending: #eff6ff;
+  --badge-trending-text: #1e40af;
+
+  /* ===== Semantic ===== */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --destructive: #ef4444;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ===== Sidebar slide-in animation ===== */
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+.animate-slide-in {
+  animation: slideIn 0.2s ease-out;
+}
+
+/* ===== Fullscreen: hide everything except the game iframe ===== */
+/* Hide header/sidebar/footer/ads when embedded game enters fullscreen.
+   The game iframe gets allowFullScreen so it can trigger native fullscreen.
+   All other page chrome should disappear to avoid overlapping the game. */
+body:has(iframe:fullscreen) [data-fullscreen-hide],
+body:has(iframe:fullscreen) aside,
+body:has(iframe:fullscreen) .sticky,
+body:has(iframe:fullscreen) nav,
+body:has(iframe:fullscreen) footer,
+body:has(iframe:fullscreen) .adsbygoogle {
+  display: none !important;
+}
+
+/* Theater mode: hide sidebar, expand content area to full width */
+html[data-theater] aside {
+  display: none !important;
+}
+html[data-theater] main {
+  padding-left: 0 !important;
+}

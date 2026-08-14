@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Free GeoGuessr</title>
+  <desc id="desc">Game controller brand mark</desc>
+  <rect width="64" height="64" rx="12" fill="#4045ed"/>
+  <circle cx="32" cy="32" r="21" fill="#ffffff"/>
+  <path d="M21 32h12M27 26v12" stroke="#4045ed" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="42" cy="28" r="2.5" fill="#f59e0b"/><circle cx="47" cy="34" r="2.5" fill="#ef4444"/>
+</svg>

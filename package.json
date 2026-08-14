@@ -1,0 +1,32 @@
+{
+  "name": "freegeoguessr-h5-site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "audit:data": "python3 scripts/audit-games-data.py",
+    "audit:seo": "python3 scripts/audit-static-seo.py",
+    "audit:performance": "python3 scripts/audit-static-performance.py",
+    "deploy:setup": "python3 setup_deploy.py",
+    "deploy": "python3 deploy.py"
+  },
+  "dependencies": {
+    "lucide-react": "^1.11.0",
+    "next": "16.2.4",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.4",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
