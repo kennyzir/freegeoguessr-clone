@@ -90,7 +90,7 @@ export default function HomePage() {
               embedUrl={heroGame.embedUrl}
               screenshotUrl={heroGame.screenshotUrl}
               name={heroGame.name}
-              type={heroGame.slug === 'openguessr' ? 'popup' : 'iframe'}
+              type="iframe"
               adOverlay={siteConfig.enablePrerollAds ? (
                 <AdUnit slot="3367781436" format="rectangle" />
               ) : undefined}
